@@ -1,0 +1,53 @@
+//@mixin tech-logo {
+//  @include logo;
+//  left: 1.5em;
+//}
+//
+//@mixin team-logo {
+//  @include logo;
+//  right: 1.5em;
+//}
+//
+//// Tech Logo's
+//
+//.col[data-tech="android"]:before {
+//  @include tech-logo;
+//  background-image: url(../../../assets/logos/tech/android.png);
+//}
+//
+//.col[data-tech="vue"]:before {
+//  @include tech-logo;
+//  background-image: url(../../../assets/logos/tech/vue.png);
+//}
+//
+//.col[data-tech="react"]:before {
+//  @include tech-logo;
+//  background-image: url(../../../assets/logos/tech/react.png);
+//}
+//
+//.col[data-tech="php"]:before {
+//  @include tech-logo;
+//  background-image: url(../../../assets/logos/tech/php.png);
+//}
+//
+//.col[data-tech="java"]:before {
+//  @include tech-logo;
+//  background-image: url(../../../assets/logos/tech/java.png);
+//}
+//
+//// Team Logo's
+//.col[data-team="solo"]:after {
+//  @include team-logo;
+//  background-image: url(../../../assets/logos/team/solo.png);
+//}
+//
+//.col[data-team="team"]:after {
+//  @include team-logo;
+//  background-image: url(../../../assets/logos/team/team.png);
+//}
+//
+//.col[data-team="pro"]:after {
+//  @include team-logo;
+//  background-image: url(../../../assets/logos/team/pro.png);
+//}
+//

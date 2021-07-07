@@ -1,0 +1,62 @@
+{
+  "kabisa": {
+    "fullName": "Kabisa internship",
+    "name": "kabisa",
+    "tech": null,
+    "discipline": "pro"
+  },
+  "winc": {
+    "fullName": "Winc Academy",
+    "name": "winc",
+    "tech": null,
+    "discipline": "pro"
+  },
+  "pokedexReact": {
+    "fullName": "PokéDex - React",
+    "name": "pokedexreact",
+    "tech": "react",
+    "discipline": "solo"
+  },
+  "pokedexVue": {
+    "fullName": "PokéDex - Vue",
+    "name": "pokedexvue",
+    "tech": "vue",
+    "discipline": "solo"
+  },
+  "monumental": {
+    "fullName": "Monumental - Android",
+    "name": "monumental",
+    "tech": "android",
+    "discipline": "solo"
+  },
+  "vittles": {
+    "fullName": "Vittles - Android",
+    "name": "vittles",
+    "tech": "android",
+    "discipline": "team"
+  },
+  "pokedexAndroid": {
+    "fullName": "PokéDex - Android",
+    "name": "pokedexandroid",
+    "tech": "android",
+    "discipline": "solo"
+  },
+  "usmedia": {
+    "fullName": "UsMedia - Internship",
+    "name": "usmedia",
+    "tech": null,
+    "discipline": "pro"
+  },
+  "timeWizard": {
+    "fullName": "TimeWizard - PHP",
+    "name": "timewizard",
+    "tech": "php",
+    "discipline": "solo"
+  },
+  "fys": {
+    "fullName": "Fasten Your Seatbelts",
+    "name": "fys",
+    "tech": "java",
+    "discipline": "team"
+  }
+}
