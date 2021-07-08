@@ -4,17 +4,49 @@
     <div class="dialog__content-wrapper">
       <div v-on:click="closeDialog" class="dialog__close-button">✖</div>
       <div class="dialog__container">
-        <div class="dialog__content" id="dialog-content"></div>
+        <div class="dialog__content" ref="dialogContent" id="dialog-content"></div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+
+import hljs from "highlight.js/lib/core";
+import Accordion from "@/js/accordion";
+
 export default {
   name: "Dialog",
-  mounted() {
-    console.log('faka');
+  data() {
+    return {
+      projectName: {
+
+      },
+      markdown: {}
+    }
+  },
+  async mounted() {
+    document.body.classList.add('scroll_disabled');
+    this.projectName = this.$router.currentRoute.params.project_name;
+    console.log(this.projectName);
+    // console.log(require(`@/assets/markdown/${this.projectName}.md`));
+    this.markdown = await import(`@/assets/markdown/${this.projectName}.md`);
+    console.log(this.markdown.default);
+
+    const doc = document.createRange().createContextualFragment(this.markdown.default); // Create HTML fragment from HTML string
+    doc.querySelectorAll('[alt]:not([alt=""])').forEach(e => { e.classList.add(e.getAttribute('alt').split(' ')[0]); }); // set classnames from first alt attribute value
+    doc.querySelectorAll('img.flex').forEach( e => { e.parentElement.classList.add('flex'); }); // Set flex attribute for flex images parent
+    doc.querySelectorAll('details').forEach((e) => { new Accordion(e); }); // Set Accordion animation for all details tags
+    // this.$refs.dialogContent.innerHTML = ''; // Clear dialog
+    this.$refs.dialogContent.appendChild(doc);// Fill dialog with data
+    document.querySelector('.dialog__content-wrapper').scrollTop = 0; // Scroll dialog to top
+    hljs.highlightAll(); // Highlight code blocks with Highlight.js
+    // collapseNavBar(); // Force navBar to collapse (if at top of page scroll down first)
+    // openDialog();
+
+  },
+  beforeDestroy() {
+    document.body.classList.remove('scroll_disabled');
   },
   methods: {
     closeDialog() {
@@ -24,7 +56,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #dialog {
   //opacity: 0;
   transition: opacity $transition_out;
@@ -140,6 +172,28 @@ export default {
 
     &__content {
       width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-width: $medium) { // Tablet query
+  #dialog .dialog {
+    &__content-wrapper {
+      width: 90%;
+
+      h1, h2, h3, h4, h5, h6, summary, #screens {
+        text-align: center;
+      }
+
+      p a:not(:last-of-type) button {
+        margin-bottom: 1em;
+      }
+
+      // Per paragraph all buttons except last get margin-bottom
+
+      button {
+        width: 100%;
+      }
     }
   }
 }

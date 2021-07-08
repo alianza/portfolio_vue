@@ -39,17 +39,17 @@
           <h1>About me!</h1>
           <div class="wrapper">
             <div class="col" data-name="portrait">
-              <div class="img"></div>
+              <img src="@/assets/portrait.webp" class="img" alt="Who I am">
               <h3>Who I am</h3>
               <p></p>
             </div>
             <div class="col" data-name="professional">
-              <div class="img"></div>
+              <img src="@/assets/professional.gif" class="img" alt="Fun">
               <h3>What I do professionally</h3>
               <p></p>
             </div>
             <div class="col" data-name="fun">
-              <div class="img"></div>
+              <img src="@/assets/fun.webp" class="img" alt="Professional">
               <h3>What I do for fun</h3>
               <p></p>
             </div>
@@ -507,6 +507,7 @@ button, .button {
             border-radius: 1em;
             width: 100%;
             aspect-ratio: 1/1;
+            object-fit: cover;
 
             //&:before {
             //  display: block;
@@ -700,28 +701,6 @@ button, .button {
 
     h1 {
       text-align: center;
-    }
-  }
-}
-
-@media only screen and (max-width: $medium) { // Tablet query
-  #dialog .dialog {
-    &__content-wrapper {
-      width: 90%;
-
-      h1, h2, h3, h4, h5, h6, summary, #screens {
-        text-align: center;
-      }
-
-      p a:not(:last-of-type) button {
-        margin-bottom: 1em;
-      }
-
-      // Per paragraph all buttons except last get margin-bottom
-
-      button {
-        width: 100%;
-      }
     }
   }
 }
