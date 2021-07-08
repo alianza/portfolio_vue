@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '@/views/Home.vue'
 
 //Components
-import Dialog from "../components/Dialog";
+import Dialog from "@/components/Dialog";
 
 Vue.use(VueRouter)
 
