@@ -115,7 +115,7 @@
     </div>
 
     <transition name="fade" mode="out-in">
-      <router-view name="project"></router-view>
+      <router-view name="dialog"></router-view>
     </transition>
 
   </div>
@@ -127,15 +127,7 @@
 // import Footer from "./components/Footer";
 // import Loader from "./components/Loader";
 
-import hljs from 'highlight.js/lib/core'// require only the core library
-// import marked from 'marked'
-import 'highlight.js/styles/xcode.css';
-// import Accordion from './js/accordion';
 import experiences from './assets/experiences.json'
-
-// Init
-hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript')); // separately require languages
-hljs.registerLanguage('kotlin', require('highlight.js/lib/languages/kotlin')); // separately require languages
 
 // Variables
 const topOffsetBig = 80;
@@ -252,11 +244,9 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
 
 @import "./css/normalize.css";

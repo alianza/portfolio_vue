@@ -4,7 +4,8 @@
     <div class="dialog__content-wrapper">
       <div v-on:click="closeDialog" class="dialog__close-button">✖</div>
       <div class="dialog__container">
-        <div class="dialog__content" ref="dialogContent" id="dialog-content"></div>
+        <div class="dialog__content" ref="dialogContent" id="dialog-content">
+        </div>
       </div>
     </div>
   </div>
@@ -15,6 +16,10 @@
 import hljs from "highlight.js/lib/core";
 import Accordion from "@/js/accordion";
 
+// Init
+hljs.registerLanguage('javascript', require('highlight.js/lib/languages/javascript')); // separately require languages
+hljs.registerLanguage('kotlin', require('highlight.js/lib/languages/kotlin')); // separately require languages
+
 export default {
   name: "Dialog",
   data() {
@@ -22,7 +27,9 @@ export default {
       projectName: {
 
       },
-      markdown: {}
+      markdown: {
+
+      }
     }
   },
   async mounted() {
@@ -32,7 +39,7 @@ export default {
     // console.log(require(`@/assets/markdown/${this.projectName}.md`));
     this.markdown = await import(`@/assets/markdown/${this.projectName}.md`);
     console.log(this.markdown.default);
-
+    //
     const doc = document.createRange().createContextualFragment(this.markdown.default); // Create HTML fragment from HTML string
     doc.querySelectorAll('[alt]:not([alt=""])').forEach(e => { e.classList.add(e.getAttribute('alt').split(' ')[0]); }); // set classnames from first alt attribute value
     doc.querySelectorAll('img.flex').forEach( e => { e.parentElement.classList.add('flex'); }); // Set flex attribute for flex images parent
@@ -55,6 +62,11 @@ export default {
   }
 }
 </script>
+
+<style lang="css" src='highlight.js/styles/xcode.css'>
+
+/* global styles */
+</style>
 
 <style lang="scss">
 #dialog {
